@@ -1,0 +1,14 @@
+<{if $analytics_visit_title}>
+	<h1><{$analytics_visit_title}></h1>
+<{/if}>
+<{if $analytics_visit_info}>
+	<p><{$analytics_visit_info}></p>
+<{/if}>
+
+<{if $analytics_visit_table}>
+	<{$analytics_visit_table}>
+<{/if}>
+
+<{if $addvisit}>
+	<{includeq file='db:system_common_form.html' form=$addvisit}>
+<{/if}>

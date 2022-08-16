@@ -1,0 +1,14 @@
+<{if $analytics_os_title}>
+	<h1><{$analytics_os_title}></h1>
+<{/if}>
+<{if $analytics_os_info}>
+	<p><{$analytics_os_info}></p>
+<{/if}>
+
+<{if $analytics_os_table}>
+	<{$analytics_os_table}>
+<{/if}>
+
+<{if $addos}>
+	<{includeq file='db:system_common_form.html' form=$addos}>
+<{/if}>

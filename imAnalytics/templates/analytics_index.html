@@ -1,0 +1,39 @@
+<{includeq file='db:analytics_header.html'}>
+
+<{foreach item=analytics_post from=$analytics_posts}>
+	<div class="analytics_post_container">
+
+	<div class="post-date">
+		<span class="month"><{$analytics_post.post_month_short}></span>
+		<span class="day"><{$analytics_post.post_day_number}></span>
+	</div>
+		<h1 class="post-title"><{$analytics_post.itemLink}></h1>
+		<div class="analytics_post_info"><{$analytics_post.post_info}> <{$smarty.const._CO_ANALYTICS_POST_BY}> <img src="<{$analytics_images_url}>user.gif" alt="" /> <{$analytics_post.post_uid}>
+		<{if $analytics_post.categories}>
+		<div class="left_main">
+		<div class="analytics_post_filed_under"><{$smarty.const._CO_ANALYTICS_FILED_UNDER}></div>
+			<div class="analytics_post_categories">
+				<{foreach item=category from=$analytics_post.categories name=loop}>
+					<a href="index.php?cid=<{$category.id}>"><{$category.title}></a><{if !$smarty.foreach.loop.last}>, <{/if}>
+			 	<{/foreach}>
+			 </div>
+		</div>
+		<{/if}>
+		</div>
+		<div class="analytics_post_content">
+			<{$analytics_post.post_lead}>
+		</div>
+
+		<div class="analytics_post_comments">
+			<{$analytics_post.post_comment_info}>
+		</div>
+		<{if $analytics_post.userCanEditAndDelete}>
+			<div class="analytics_admin_links"><{$analytics_post.editItemLink}><{$analytics_post.deleteItemLink}></div>
+		<{/if}>
+	</div>
+<{/foreach}>
+<{if $navbar}>
+	<div id="analytics_navbar"><{$smarty.const._MD_ANALYTICS_NAV_PAGES}> <{$navbar}></div>
+<{/if}>
+
+<{includeq file='db:analytics_footer.html'}>

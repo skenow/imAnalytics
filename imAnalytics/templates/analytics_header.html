@@ -1,0 +1,18 @@
+<!-- Thank you for keeping this line in the template :-) //-->
+<!-- <{$ref_smartfactory}> //-->
+<!-- Thank you for keeping this line in the template :-) //-->
+
+<div class="analytics_headertable">
+	<{if $analytics_module_home}>
+		<span class="analytics_modulename"><{$analytics_module_home}></span>
+	<{/if}>
+	<{if $analytics_category_path}>
+		<span class="analytics_breadcrumb">
+		<{if $analytics_module_home}>
+			&gt;
+		<{/if}>
+	  	<{$analytics_category_path}></span>
+	<{/if}>
+</div>
+
+<div id="analytics_submit" style="clear: both;"><{if $analytics_showSubmitLink && $analytics_userCanSubmit}><a href="<{$analytics_url}>post.php?op=mod"><{$smarty.const._MI_ANALYTICS_POST_ADD}></a><{/if}></div>

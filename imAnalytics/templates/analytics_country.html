@@ -1,0 +1,18 @@
+<{includeq file='db:analytics_header.html'}>
+
+<{if $analytics_country}>
+	<div id="analytics-country-container">
+		<h1><{$analytics_country.name}></h1>
+		<div><b><{$smarty.const._CO_ANALYTICS_COUNTRY_USER_AGENT}></b>: <{$analytics_country.user_agent}></div>
+		<div><b><{$smarty.const._CO_ANALYTICS_COUNTRY_DOMAIN}></b>: <{$analytics_country.domain}></div>
+		<div><b><{$smarty.const._CO_ANALYTICS_COUNTRY_IP_START}></b>: <{$analytics_country.ip_start}></div>
+		<div><b><{$smarty.const._CO_ANALYTICS_COUNTRY_IP_END}></b>: <{$analytics_country.ip_end}></div>
+
+	</div>
+<{/if}>
+<{if $analytics_country_table}>
+	<h1><{$analytics_title}></h1>
+	<{$analytics_country_table}>
+<{/if}>
+
+<{includeq file='db:analytics_footer.html'}>

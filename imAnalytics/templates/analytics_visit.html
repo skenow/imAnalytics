@@ -1,0 +1,26 @@
+<{includeq file='db:analytics_header.html'}>
+
+<{if $analytics_visit}>
+	<div id="analytics-visit-container">
+		<h1><{$analytics_visit.datetime_start}></h1>
+		<div><b><{$smarty.const._CO_ANALYTICS_VISIT_USER_ID}></b>: <{$analytics_visit.user_id}></div>
+		<div><b><{$smarty.const._CO_ANALYTICS_VISIT_HTTP_REFERER}></b>: <{$analytics_visit.http_referer}></div>
+		<div><b><{$smarty.const._CO_ANALYTICS_VISIT_REMOTE_ADDR}></b>: <{$analytics_visit.remote_addr}></div>
+		<div><b><{$smarty.const._CO_ANALYTICS_VISIT_REQUEST_URI}></b>: <{$analytics_visit.request_uri}></div>
+		<div><b><{$smarty.const._CO_ANALYTICS_VISIT_QUERY_STRING}></b>: <{$analytics_visit.query_string}></div>
+		<div><b><{$smarty.const._CO_ANALYTICS_VISIT_HTTP_USER_AGENT}></b>: <{$analytics_visit.http_user_agent}></div>
+		<div><b><{$smarty.const._CO_ANALYTICS_VISIT_SESSION_ID}></b>: <{$analytics_visit.session_id}></div>
+		<div><b><{$smarty.const._CO_ANALYTICS_VISIT_DATETIME_END}></b>: <{$analytics_visit.datetime_end}></div>
+		<div><b><{$smarty.const._CO_ANALYTICS_VISIT_HTTP_ACCEPT_LANGUAGE}></b>: <{$analytics_visit.http_accept_language}></div>
+		<div><b><{$smarty.const._CO_ANALYTICS_VISIT_REMOTE_HOST}></b>: <{$analytics_visit.remote_host}></div>
+		<div><b><{$smarty.const._CO_ANALYTICS_VISIT_REQUEST_TIME}></b>: <{$analytics_visit.request_time}></div>
+		<div><b><{$smarty.const._CO_ANALYTICS_VISIT_REQUEST_METHOD}></b>: <{$analytics_visit.request_method}></div>
+
+	</div>
+<{/if}>
+<{if $analytics_visit_table}>
+	<h1><{$analytics_title}></h1>
+	<{$analytics_visit_table}>
+<{/if}>
+
+<{includeq file='db:analytics_footer.html'}>
