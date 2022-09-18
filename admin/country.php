@@ -57,7 +57,7 @@ $clean_country_id = isset($_GET['country_id']) ? (int) $_GET['country_id'] : 0 ;
  * are case sensitive and the 3rd argument determines whether type matching is
  * required
  */
-if (in_array($clean_op,$valid_op,TRUE)) {
+if (in_array($clean_op,$valid_op,true)) {
 	switch ($clean_op) {
 		case "mod":
 		case "changedField":

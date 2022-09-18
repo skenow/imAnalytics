@@ -57,7 +57,7 @@ $clean_visit_id = isset($_GET['visit_id']) ? (int) $_GET['visit_id'] : 0 ;
  * are case sensitive and the 3rd argument determines whether type matching is
  * required
  */
-if (in_array($clean_op, $valid_op, TRUE)){
+if (in_array($clean_op, $valid_op, true)){
 	switch ($clean_op) {
 		case "mod":
 		case "changedField":

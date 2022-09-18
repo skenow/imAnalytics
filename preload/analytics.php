@@ -51,7 +51,7 @@ class IcmsPreloadAnalytics extends icms_preload_Item {
 	 */
 	function eventStartOutputInit() {
 		$this::$_visit->setStart();
-		$this::$_visit->store(TRUE);
+		$this::$_visit->store(true);
 	}
 
 	/**
@@ -61,7 +61,7 @@ class IcmsPreloadAnalytics extends icms_preload_Item {
 	 */
 	function eventBeforeFooter() {
 		$this::$_visit->setEnd();
-		$this::$_visit->store(TRUE);
+		$this::$_visit->store(true);
 	}
 
 	/**

@@ -15,10 +15,10 @@ class AnalyticsOS extends icms_ipf_Object {
 	public function __construct(&$handler) {
 		parent::__construct($handler);
 		
-		$this->quickInitVar('os_id', XOBJ_DTYPE_INT, TRUE);
-		$this->quickInitVar('name', XOBJ_DTYPE_TXTBOX, FALSE);
-		$this->quickInitVar('user_agent', XOBJ_DTYPE_TXTBOX, FALSE);
-		$this->quickInitVar('version', XOBJ_DTYPE_TXTBOX, FALSE);
+		$this->quickInitVar('os_id', XOBJ_DTYPE_INT, true);
+		$this->quickInitVar('name', XOBJ_DTYPE_TXTBOX, false);
+		$this->quickInitVar('user_agent', XOBJ_DTYPE_TXTBOX, false);
+		$this->quickInitVar('version', XOBJ_DTYPE_TXTBOX, false);
 		
 	}
 	

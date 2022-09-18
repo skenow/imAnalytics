@@ -33,6 +33,6 @@ if($osObj && !$osObj->isNew()) {
 	$icmsTpl->assign('analytics_os_table', $objectTable->fetch());
 }
 
-$icmsTpl->assign('analytics_module_home', analytics_getModuleName(TRUE, TRUE));
+$icmsTpl->assign('analytics_module_home', analytics_getModuleName(true, true));
 
 include_once 'footer.php';

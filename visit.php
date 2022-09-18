@@ -22,7 +22,7 @@ $visitObj = $analytics_visit_handler->get($clean_visit_id);
 
 $icmsTpl->assign('analytics_title', _MD_ANALYTICS_ALL_VISITS);
 
-$objectTable = new icms_ipf_view_Table($analytics_visit_handler, FALSE, array());
+$objectTable = new icms_ipf_view_Table($analytics_visit_handler, false, array());
 $objectTable->isForUserSide();
 $objectTable->addColumn(new icms_ipf_view_Column('datetime_start'));
 $objectTable->addColumn(new icms_ipf_view_Column('request_uri'));
@@ -32,6 +32,6 @@ $objectTable->setDefaultOrder('DESC');
 
 $icmsTpl->assign('analytics_visit_table', $objectTable->fetch());
 
-$icmsTpl->assign('analytics_module_home', analytics_getModuleName(TRUE, TRUE));
+$icmsTpl->assign('analytics_module_home', analytics_getModuleName(true, true));
 
 include_once 'footer.php';

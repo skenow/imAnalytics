@@ -15,13 +15,13 @@ class AnalyticsEngine extends icms_ipf_Object {
 	public function __construct(&$handler) {
 		parent::__construct($handler);
 		
-		$this->quickInitVar('engine_id', XOBJ_DTYPE_INT, TRUE);
-		$this->quickInitVar('name', XOBJ_DTYPE_TXTBOX, FALSE);
-		$this->quickInitVar('domain', XOBJ_DTYPE_TXTBOX, FALSE);
-		$this->quickInitVar('user_agent', XOBJ_DTYPE_TXTBOX, FALSE);
-		$this->quickInitVar('ip_start', XOBJ_DTYPE_INT, FALSE);
-		$this->quickInitVar('ip_end', XOBJ_DTYPE_INT, FALSE);
-		$this->quickInitVar('query_var', XOBJ_DTYPE_TXTBOX, FALSE);
+		$this->quickInitVar('engine_id', XOBJ_DTYPE_INT, true);
+		$this->quickInitVar('name', XOBJ_DTYPE_TXTBOX, false);
+		$this->quickInitVar('domain', XOBJ_DTYPE_TXTBOX, false);
+		$this->quickInitVar('user_agent', XOBJ_DTYPE_TXTBOX, false);
+		$this->quickInitVar('ip_start', XOBJ_DTYPE_INT, false);
+		$this->quickInitVar('ip_end', XOBJ_DTYPE_INT, false);
+		$this->quickInitVar('query_var', XOBJ_DTYPE_TXTBOX, false);
 		
 	}
 	

@@ -30,23 +30,23 @@ class AnalyticsVisit extends icms_ipf_Object {
 
 		parent::__construct($handler);
 
-		$this->quickInitVar('visit_id', XOBJ_DTYPE_INT, TRUE);
+		$this->quickInitVar('visit_id', XOBJ_DTYPE_INT, true);
 		
-		$this->quickInitVar('request_time', XOBJ_DTYPE_LTIME, FALSE);
-		$this->quickInitVar('request_method', XOBJ_DTYPE_TXTBOX, FALSE);
-		$this->quickInitVar('request_uri', XOBJ_DTYPE_TXTBOX, FALSE);
-		$this->quickInitVar('query_string', XOBJ_DTYPE_TXTBOX, FALSE);
-		$this->quickInitVar('http_referer', XOBJ_DTYPE_TXTBOX, FALSE);
-		$this->quickInitVar('http_user_agent', XOBJ_DTYPE_TXTBOX, FALSE);
-		$this->quickInitVar('http_accept_language', XOBJ_DTYPE_TXTBOX, FALSE);
-		$this->quickInitVar('remote_addr', XOBJ_DTYPE_TXTBOX, FALSE);
-		$this->quickInitVar('remote_host', XOBJ_DTYPE_TXTBOX, FALSE);
+		$this->quickInitVar('request_time', XOBJ_DTYPE_LTIME, false);
+		$this->quickInitVar('request_method', XOBJ_DTYPE_TXTBOX, false);
+		$this->quickInitVar('request_uri', XOBJ_DTYPE_TXTBOX, false);
+		$this->quickInitVar('query_string', XOBJ_DTYPE_TXTBOX, false);
+		$this->quickInitVar('http_referer', XOBJ_DTYPE_TXTBOX, false);
+		$this->quickInitVar('http_user_agent', XOBJ_DTYPE_TXTBOX, false);
+		$this->quickInitVar('http_accept_language', XOBJ_DTYPE_TXTBOX, false);
+		$this->quickInitVar('remote_addr', XOBJ_DTYPE_TXTBOX, false);
+		$this->quickInitVar('remote_host', XOBJ_DTYPE_TXTBOX, false);
 		
-		$this->quickInitVar('hostname', XOBJ_DTYPE_TXTBOX, FALSE);
-		$this->quickInitVar('datetime_start', XOBJ_DTYPE_LTIME, FALSE);
-		$this->quickInitVar('datetime_end', XOBJ_DTYPE_LTIME, FALSE);
-		$this->quickInitVar('user_id', XOBJ_DTYPE_INT, FALSE);
-		$this->quickInitVar('session_id', XOBJ_DTYPE_TXTBOX, FALSE);
+		$this->quickInitVar('hostname', XOBJ_DTYPE_TXTBOX, false);
+		$this->quickInitVar('datetime_start', XOBJ_DTYPE_LTIME, false);
+		$this->quickInitVar('datetime_end', XOBJ_DTYPE_LTIME, false);
+		$this->quickInitVar('user_id', XOBJ_DTYPE_INT, false);
+		$this->quickInitVar('session_id', XOBJ_DTYPE_TXTBOX, false);
 
 		$this->makeFieldReadOnly(array_keys($this->getVars()));
 		$this->setControl('datetime_start', 'text');
@@ -95,7 +95,7 @@ class AnalyticsVisit extends icms_ipf_Object {
 		}
 		$this->setVars($http_request);
 		// This needs to run before any page output or other headers are sent
-		$session_id = icms_getCookieVar('icms_analytics', FALSE);
+		$session_id = icms_getCookieVar('icms_analytics', false);
 		if (!$session_id) {
 			// This is in case the browser is not accepting cookies. Doesn't help with bot tracking
 			if (isset($_SESSION['icms_analytics'])) {
@@ -118,7 +118,7 @@ class AnalyticsVisit extends icms_ipf_Object {
 	public function setStart() {
 		$user_id = $GLOBALS['icmsUser'] ? $GLOBALS['icmsUser']->getVar('uid') : 0;
 		$this->setVars(array(
-		    'datetime_start' => microtime(TRUE),
+		    'datetime_start' => microtime(true),
 		    'user_id' => $user_id,
 			)
 		);
@@ -128,7 +128,7 @@ class AnalyticsVisit extends icms_ipf_Object {
 	 * Sets the end time of the page rendering
 	 */
 	public function setEnd() {
-		$this->setVars(array('datetime_end' => microtime(TRUE)));
+		$this->setVars(array('datetime_end' => microtime(true)));
 	}
 }
 

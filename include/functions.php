@@ -35,7 +35,7 @@ function analytics_getModuleAdminLink($moduleName='analytics') {
 /**
  * @todo to be move in icms core
  */
-function analytics_getModuleName($withLink = TRUE, $forBreadCrumb = FALSE, $moduleName = FALSE) {
+function analytics_getModuleName($withLink = true, $forBreadCrumb = false, $moduleName = false) {
 	if (!$moduleName) {
 		global $icmsModule;
 		$moduleName = $icmsModule->getVar('dirname');

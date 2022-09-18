@@ -40,7 +40,7 @@ function icms_module_update_analytics($module) {
 	 */
 	$icmsDatabaseUpdater = XoopsDatabaseFactory::getDatabaseUpdater();
 	$icmsDatabaseUpdater->moduleUpgrade($module);
-    return TRUE;
+    return true;
 }
 
 function icms_module_install_analytics($module) {
